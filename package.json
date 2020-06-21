@@ -1,0 +1,19 @@
+{
+  "name": "bday2020",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node build/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "typescript-rest": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.13"
+  }
+}
