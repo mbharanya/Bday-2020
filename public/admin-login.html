@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Super secret, definitely secure website</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div class="window" style="margin: 32px; width: 250px">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                Admin login
+            </div>
+        </div>
+        <div class="window-body">
+            <form id="login-form">
+                <div class="field-row">
+                    <label>Email:<input type="email" id="email" required></input></label>
+                </div>
+                <div class="field-row">
+                    <label>Password:<input type="password" id="password" required pattern="[a-zA-Z]{1,6}"></input></label>
+                </div>
+                <div class="field-row">
+                    <button type="submit" id="login">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="scripts/admin.js" async defer></script>
+</body>
+
+</html>

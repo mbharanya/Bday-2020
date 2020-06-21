@@ -6,15 +6,15 @@ import md5 = require('md5');
 export class LoggedInService {
     @GET
     getUsers(){
-        const salt = "salty"
+        const salt = "🧂"
         return [
             {
                 email: "bday@example.com",
-                password: md5("secret" + salt)
+                password: md5("secret" + salt) 
             },
             {
                 email: "admin@example.com",
-                password: md5("happy" + salt)
+                password: md5("happy"+ salt)
             }
         ]
     }

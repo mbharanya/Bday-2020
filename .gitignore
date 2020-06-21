@@ -1,2 +1,5 @@
 build
 node_modules
+bday-solver/.idea
+bday-solver/target
+bday-solver/project/target
