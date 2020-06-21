@@ -1,9 +1,11 @@
 import * as express from "express";
 import {Server, Path, GET, PathParam} from "typescript-rest";
 import {LoginService} from './services/LoginService'
+import {LoggedInService} from './services/LoggedInService'
+
 
 let app: express.Application = express();
-Server.buildServices(app, LoginService);
+Server.buildServices(app, LoginService, LoggedInService);
 
 app.use(express.static('public'))
  

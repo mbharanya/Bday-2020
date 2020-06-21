@@ -2,28 +2,32 @@
 <html>
 
 <head>
-    <title>98.css example</title>
+    <title>Super secret, definitely secure website</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
     <div class="window" style="margin: 32px; width: 250px">
         <div class="title-bar">
             <div class="title-bar-text">
-                My First VB4 Program
+                Log in to see classified information
             </div>
         </div>
         <div class="window-body">
-            <div class="field-row">
-                <label>Username:<input type="email" id="email"></input></label>
-            </div>
-            <div class="field-row">
-                <label>Password:<input type="password" id="password"></input></label>
-            </div>
-            <div class="field-row">
-                <button id="login">Login</button>
-            </div>
+            <form id="login-form">
+                <div class="field-row">
+                    <label>Email:<input type="email" id="email" required></input></label>
+                </div>
+                <div class="field-row">
+                    <label>Password:<input type="password" id="password" required pattern="[a-zA-Z]{1,6}"></input></label>
+                </div>
+                <div class="field-row">
+                    <button type="submit" id="login">Login</button>
+                </div>
+            </form>
         </div>
     </div>
     <script src="scripts/index.js" async defer></script>

@@ -1,5 +1,6 @@
 
-document.getElementById("login").addEventListener('click', () => {
+document.getElementById("login-form").addEventListener("submit", event => {
+    event.preventDefault()
     fetch('/login', {
         method: 'POST',
         body: JSON.stringify({
@@ -11,10 +12,12 @@ document.getElementById("login").addEventListener('click', () => {
         }
     }).then(function (response) {
         if (response.ok) {
-            return response.json();
+            const audio = new Audio('Windows-98-startup-sound.wav');
+            audio.play().then(() => {
+                response.json().then(json => window.location.replace(json.path))
+            });
         }
         return Promise.reject(response);
-    }).then(function (data) {
-        console.log(data);
-    })
+    }).catch(e => console.error(e))
+
 })

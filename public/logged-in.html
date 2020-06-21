@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Super secret, definitely secure website</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div class="window" style="margin: 32px; width: 500px">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                My secure list
+            </div>
+        </div>
+        <div class="window-body">
+            <table border="1" style="width: 450px;">
+                <b>For admins use <a href="/admin-login.html">/admin-login.html</a></b>
+                <thead>
+                    <th>User</th>
+                    <th>PW</th>
+                </thead>
+                <tbody id="users">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="scripts/logged-in.js" async defer></script>
+</body>
+
+</html>
