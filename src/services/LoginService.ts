@@ -17,6 +17,21 @@ export class LoginService {
   }
 }
 
+
+@Path("/admin-login")
+export class AdminLoginService {
+  @POST
+  login(user: User): object {
+    console.log(user)
+    const isValid = user.email == "admin@example.com" && user.password == "happy"
+    if (!isValid){
+      throw new Errors.UnauthorizedError("Nice try") 
+    }
+    return { path: "/finish.html" }
+  }
+}
+
+
 type User = {
   email: string,
   password: string

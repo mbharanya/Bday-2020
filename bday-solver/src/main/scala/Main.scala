@@ -3,7 +3,7 @@ import java.math.BigInteger
 import java.security.MessageDigest
 
 object Main extends App {
-  val searchMd5 = new BigInteger("7397c6177b50f4131f9b67f454faee2f", 16).toByteArray.drop(1)
+  val searchMd5 = new BigInteger("7397c6177b50f4131f9b67f454faee2f", 16).toByteArray
 
   val salt = "\uD83E\uDDC2"
 
@@ -12,6 +12,7 @@ object Main extends App {
   val options = ('A' to 'z').filter(c => "[a-zA-Z]".r.pattern.matcher(c + "").matches()).toList
   println(options.mkString(","))
   println(toHex(md5("happy" + salt)))
+  println(md5("happy" + salt).sameElements(searchMd5))
 
   val start = System.nanoTime()
   try {
@@ -24,11 +25,12 @@ object Main extends App {
     } yield ()
   } catch {
     case e: RuntimeException => {
-      val endTime = System.nanoTime() - start
       println(e.getMessage)
-      println(endTime / 1000 / 1000 / 1000 + "s")
     }
   }
+
+  val endTime = System.nanoTime() - start
+  println(endTime / 1000 / 1000 / 1000 + "s")
   println("Done searching!")
 
 
